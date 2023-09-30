@@ -1,0 +1,90 @@
+html 
+  head 
+    title #{title}
+    style. 
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        color: thick-brown;
+        font-size: 30px;
+      }
+      div{
+        font-size: 20px;
+      }
+      body{
+        background-position: center;
+        background-height: 80px 100px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+      .navbar{
+        
+        gap: 20px;
+        margin-left: 300px;
+      }
+      a{  
+        padding: 5px;
+        margin: 15px 0 15px 10px;
+        color:navy;
+        text-decoration: none;
+      }
+      .navbarsec{
+        align-items: center;
+        padding: 0 0 0 10%;
+        display:flex;
+        opacity: 0.6;
+        background-color: lightgrey;
+        padding:20px;
+      }
+      .back{
+       
+        padding :20px;
+        margin-left : 20px;
+        font-size: 40px;
+        color: red;
+      }
+      .flexdiv{
+        display:flex;
+      }
+      p{
+        font-size:15px;
+      }
+      img{
+        width:250px;
+        height:250px;
+      }
+
+  body 
+    section.navbarsec
+      h1 #{title}
+      div.navbar
+        a(href='/personals') Personals
+        a(href='/ayurvedics') ayurvedics
+        a(href='/foods') foods
+        a(href='/accesories') accesories
+    h1 personal care
+        section.flexdiv
+          div.imgcontainer
+              div.imgcontainerchild
+                  img(src=accesoriesdata[0].image)
+                  h2 #{accesoriesdata[0].name}
+                  p #{accesoriesdata[0].description}                
+                  br
+                  span #{accesoriesdata[0].price} ₹
+          div.imgcontainer
+              div.imgcontainerchild
+                  img(src=accesoriesdata[1].image)
+                  h2 #{accesoriesdata[1].name}
+                  p #{accesoriesdata[1].description}                
+                  br
+                  span #{accesoriesdata[1].price} ₹
+          div.imgcontainer
+              div.imgcontainerchild
+                  img(src=accesoriesdata[2].image)
+                  h2 #{accesoriesdata[2].name}
+                  p #{accesoriesdata[2].description}                
+                  br
+                  span #{accesoriesdata[2].price} ₹

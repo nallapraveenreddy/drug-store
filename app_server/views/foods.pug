@@ -1,0 +1,87 @@
+html 
+  head 
+    title #{title}
+    style. 
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        color: thick-brown;
+        font-size: 30px;
+      }
+      div{
+        font-size: 20px;
+      }
+      body{
+        background-position: center;
+        background-height: 80px 100px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+      .navbar{
+        
+        gap: 20px;
+        margin-left: 300px;
+      }
+      a{  
+        padding: 5px;
+        margin: 15px 0 15px 10px;
+        color:navy;
+        text-decoration: none;
+      }
+      .navbarsec{
+        align-items: center;
+        padding: 0 0 0 10%;
+        display:flex;
+        opacity: 0.6;
+        background-color: lightgrey;
+        padding:20px;
+      }
+      .back{
+        
+        padding :20px;
+        margin-left : 20px;
+        font-size: 40px;
+        color: red;
+      }
+      img{
+        width:250px;
+      }
+      .flexdiv{
+        display:flex;
+      }
+
+
+  body 
+    section.navbarsec
+      h1 #{title}
+      div.navbar
+        a(href='/personals') Personals
+        a(href='/ayurvedics') ayurvedics
+        a(href='/foods') foods
+        a(href='/accesories') accesories
+    h1 personal care
+        section.flexdiv
+          div.imgcontainer
+              div.imgcontainerchild
+                  img(src=foodsdata[0].image)
+                  h2 #{foodsdata[0].name}
+                  p #{foodsdata[0].description}                
+                  br
+                  span #{foodsdata[0].price} ₹
+          div.imgcontainer
+              div.imgcontainerchild
+                  img(src=foodsdata[1].image)
+                  h2 #{foodsdata[1].name}
+                  p #{foodsdata[1].description}                
+                  br
+                  span #{foodsdata[1].price} ₹
+          //- div.imgcontainer
+          //-     div.imgcontainerchild
+          //-         img(src=foodsdata[2].image)
+          //-         h2 #{foodsdata[2].name}
+          //-         p #{foodsdata[2].description}                
+          //-         br
+          //-         span #{foodsdata[2].price} ₹
