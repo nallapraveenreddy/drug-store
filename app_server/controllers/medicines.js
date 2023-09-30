@@ -3,7 +3,7 @@ const apiOptions = {
   server: 'http://localhost:3000'
 };
 const homelist = (req, res) => {
-    res.render('index', { title: "Drugs store" });
+    res.redirect('/personals')
 
 };
 
