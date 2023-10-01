@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var ctrlMedicines = require("../controllers/medicines");
-//var ctrlAccessories = require("../controllers/others");
 
 /* GET home page. */
 router.get('/',ctrlMedicines.homelist);

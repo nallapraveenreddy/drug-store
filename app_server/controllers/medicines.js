@@ -3,13 +3,12 @@ const apiOptions = {
   server: 'http://localhost:3000'
 };
 const homelist = (req, res) => {
-    res.redirect('/personals')
+    res.render('index',{"title":'RNP Drug Store'});
 
 };
 
-
-
 // -------------------------------personals page--------------------------
+
 const renderpersonals = (req, res, personalsdata) => {
     res.render('personals',{personalsdata});
 }
@@ -36,7 +35,9 @@ const personals = async (req, res) => {
     
   );
 };
+
 // -------------------------------ayurvedics page--------------------------
+
 const renderayurvedicsPage = (req, res, ayurvedicsdata)=>{
   res.render('ayurvedics',{ayurvedicsdata});
 }
@@ -94,7 +95,9 @@ const foods = async (req, res) => {
     
   );
 };
+
 // -------------------------------accesories page--------------------------
+
 const renderaccesoriesPage = (req, res, accesoriesdata) => {
   res.render('accesories',{accesoriesdata});
 }
