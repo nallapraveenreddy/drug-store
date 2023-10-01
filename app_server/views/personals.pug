@@ -23,7 +23,7 @@ html
       }
       .navbar{
         gap: 20px;
-        margin-right:10%;
+        margin-left: 15%;
       }
       a{  
         padding: 5px;
@@ -34,7 +34,7 @@ html
       .navbarsec{
         position  : sticky;
         width: 130%;
-        height:30px;
+        height:35px;
         align-items: right;
         padding: 0 0 0 10%;
         display:flex;
@@ -51,7 +51,6 @@ html
         display:flex;
       }
       .imgcontainer{
-        color:black;
         display:flex;
       }
       .imgcontainerchild{
@@ -60,14 +59,20 @@ html
         margin:20px;
         text-align : center;
       }
+      .home{
+        font-size:40px;
+        padding: 5px;
+      }
   body 
     section.navbarsec
+      p.title 
+        a.home(href = '/') RNP Drug Store
       div.navbar
-        a(href='/personals' autofocus) Personal care
+        a(href='/personals' autofocus) Personal Care
         a(href='/ayurvedics') Ayurvedics
         a(href='/foods') Foods and Drinks
         a(href='/accesories') Accesories and wearables
-    h1 Personal care
+    h1 Personal Care
     section.flexdiv
           div.imgcontainer
               div.imgcontainerchild

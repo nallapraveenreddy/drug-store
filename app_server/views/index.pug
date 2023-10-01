@@ -1,15 +1,16 @@
 html 
   head 
-    title RNP Drug Store
+    title Accesories and Wearables
     style. 
       *{
         margin: 0;
         padding: 0;
       }
       h1 {
+        font-family: Lucida Handwriting;
         margin:20px;
         text-align: left;
-        color: green;
+        color: blue;
         font-size: 30px;
       }
       div{
@@ -23,7 +24,7 @@ html
       }
       .navbar{
         gap: 20px;
-        margin-right:10%;
+        margin-left:15%;
       }
       a{  
         padding: 5px;
@@ -33,8 +34,8 @@ html
       }
       .navbarsec{
         position  : sticky;
-        width: 130%;
-        height:30px;
+        width: 100%;
+        height:35px;
         align-items: right;
         padding: 0 0 0 10%;
         display:flex;
@@ -47,6 +48,13 @@ html
       }
       h3{
         margin: 30px;
+      }
+      .home{
+        font-size:40px;
+        padding: 5px;
+      }
+      footer{
+        margin: 20px;
       }
       //- img {
       //-     margin:20px;
@@ -68,15 +76,23 @@ html
       //- }
   body 
     section.navbarsec
+      p.title 
+        a.home(href = '/') RNP Drug Store
       div.navbar
         a(href='/personals') Personal care
         a(href='/ayurvedics') Ayurvedics
         a(href='/foods') Foods and Drinks
         a(href='/accesories') Accesories and wearables
     h1 Welcome to #{title}
+    h3 Here you can Buy Medical Products with discounts upto 50%
     div.heading
-        h2 Practioners:
+        h2 Medical Practioners:
         
-        h3 Dr.Praveen MBBS-FRCS, London
-        h3 Dr.Vinay MBBS-FRCS, U.S
-        h3 Dr.Shivani MBBS-FRCS, U.K
+        h3 Dr.Praveen 
+          strike MBBS-FRCS, London
+          span  Contact: 9390056128    
+        h3 Dr.Vinay 
+          strike MBBS-FRCS, London
+        h3 Dr.Shivani 
+          strike MBBS-FRCS, London
+    footer Copyright © 2023 RNP Drug Store
