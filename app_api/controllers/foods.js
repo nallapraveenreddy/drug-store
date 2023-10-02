@@ -46,55 +46,43 @@ const foodReadAll = async (req, res) =>{
     res.status(200).json(resfoods);
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: 'An error occurred while fetching movies.' });
+    res.status(500).json({ error: 'An error occurred while fetching foods and drinks.' });
   }
   };
     
   
-  const moviesList = async (req, res) => {
-    try {
-      const results = await Movies.find();
+  // const moviesList = async (req, res) => {
+  //   try {
+  //     const results = await Movies.find();
       
-      const movies = results.map(result => ({
-        _id: result._id,
-        title: result.title,
-        posterImageUrl: result.posterImageUrl,
-        movieDescription: result.movieDescription,
-        releaseDate: result.releaseDate,
-        cast:{
-          title:result.title,
-          heroName:result.heroName,
-          heroImageUrl:result.heroImageUrl,
-          heroinname:result.heroinname,
-          heroinImageUrl:result.heroinImageUrl,
-          director:result.director,
-          directorImageUrl:result.directorImageUrl,
-        },
-        reveiws:{
-          title:result.title,
-          rating:result.rating,
-          reviewText:result.reviewText,
-          createdOn:result.createdOn,
-        }
-      }));
-      res.status(200).json(movies);
-    } catch (err) {
-      res.status(500).json({ error: 'An error occurred while fetching movies.' });
-    }
-  };
-  // {
-  //   "_id": {
-  //     "$oid": "65132285f809201dd66759f0"
-  //   },
-  //   "name": "KATYAYANI ACTIVATED HUMIC ACID, FULVIC ACID food",
-  //   "image": "https://www.bighaat.com/cdn/shop/products/pouch-normal-1_1800x1800.jpg?v=1681205567",
-  //   "price": 279,
-  //   "MRP": 325,
-  //   "Quantity": "1kg"
-  // }
-
-
-
+  //     const movies = results.map(result => ({
+  //       _id: result._id,
+  //       title: result.title,
+  //       posterImageUrl: result.posterImageUrl,
+  //       movieDescription: result.movieDescription,
+  //       releaseDate: result.releaseDate,
+  //       cast:{
+  //         title:result.title,
+  //         heroName:result.heroName,
+  //         heroImageUrl:result.heroImageUrl,
+  //         heroinname:result.heroinname,
+  //         heroinImageUrl:result.heroinImageUrl,
+  //         director:result.director,
+  //         directorImageUrl:result.directorImageUrl,
+  //       },
+  //       reveiws:{
+  //         title:result.title,
+  //         rating:result.rating,
+  //         reviewText:result.reviewText,
+  //         createdOn:result.createdOn,
+  //       }
+  //     }));
+  //     res.status(200).json(movies);
+  //   } catch (err) {
+  //     res.status(500).json({ error: 'An error occurred while fetching movies.' });
+  //   }
+  // };
+  
 
 
 
@@ -168,7 +156,7 @@ const foodsUpdateOne = function (req, res) {
         res
           .json(404)
           .status({
-            "message": "locationid not found"
+            "message": "foodid not found"
           });
         return;
       } else if (err) {

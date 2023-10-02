@@ -19,7 +19,7 @@ const personalsCreate = function (req, res) {
       closing: req.body.closing2,
       closed: req.body.closed2,
     }]
-  }, (err, location) => {
+  }, (err, personals) => {
     if (err) {
       res
       .status(400)
@@ -27,7 +27,7 @@ const personalsCreate = function (req, res) {
     } else {
       res
       .status(201)
-      .json(location);
+      .json(personals);
     }
   });
 };
@@ -46,42 +46,42 @@ const personalReadAll = async (req, res) =>{
     res.status(200).json(respersonals);
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: 'An error occurred while fetching movies.' });
+    res.status(500).json({ error: 'An error occurred while fetching persona.' });
   }
   };
   
   
-  const moviesList = async (req, res) => {
-    try {
-      const results = await Movies.find();
+  // const moviesList = async (req, res) => {
+  //   try {
+  //     const results = await Movies.find();
       
-      const movies = results.map(result => ({
-        _id: result._id,
-        title: result.title,
-        posterImageUrl: result.posterImageUrl,
-        movieDescription: result.movieDescription,
-        releaseDate: result.releaseDate,
-        cast:{
-          title:result.title,
-          heroName:result.heroName,
-          heroImageUrl:result.heroImageUrl,
-          heroinname:result.heroinname,
-          heroinImageUrl:result.heroinImageUrl,
-          director:result.director,
-          directorImageUrl:result.directorImageUrl,
-        },
-        reveiws:{
-          title:result.title,
-          rating:result.rating,
-          reviewText:result.reviewText,
-          createdOn:result.createdOn,
-        }
-      }));
-      res.status(200).json(movies);
-    } catch (err) {
-      res.status(500).json({ error: 'An error occurred while fetching movies.' });
-    }
-  };
+  //     const movies = results.map(result => ({
+  //       _id: result._id,
+  //       title: result.title,
+  //       posterImageUrl: result.posterImageUrl,
+  //       movieDescription: result.movieDescription,
+  //       releaseDate: result.releaseDate,
+  //       cast:{
+  //         title:result.title,
+  //         heroName:result.heroName,
+  //         heroImageUrl:result.heroImageUrl,
+  //         heroinname:result.heroinname,
+  //         heroinImageUrl:result.heroinImageUrl,
+  //         director:result.director,
+  //         directorImageUrl:result.directorImageUrl,
+  //       },
+  //       reveiws:{
+  //         title:result.title,
+  //         rating:result.rating,
+  //         reviewText:result.reviewText,
+  //         createdOn:result.createdOn,
+  //       }
+  //     }));
+  //     res.status(200).json(movies);
+  //   } catch (err) {
+  //     res.status(500).json({ error: 'An error occurred while fetching movies.' });
+  //   }
+  // };
   // {
   //   "_id": {
   //     "$oid": "65132285f809201dd66759f0"
@@ -129,7 +129,7 @@ const personalsReadOne = function (req, res) {
           res	
             .status(404) 
             .json({	
-              "message": "locationid not found"
+              "message": "personalsid not found"
             });	 
           return;
         } else if (err) {
@@ -146,29 +146,29 @@ const personalsReadOne = function (req, res) {
     res		
       .status(404) 	
       .json({	
-        "message": "No locationid in request"
+        "message": "No personalsid in request"
       });		
   }
 };
 
 const personalsUpdateOne = function (req, res) {
-  if (!req.params.locationid) {
+  if (!req.params.personalsid) {
     res
       .status(404)
       .json({
-        "message": "Not found, locationid is required"
+        "message": "Not found, personalsid is required"
       });
     return;
   }
   personals
-    .findById(req.params.locationid)
+    .findById(req.params.personalsid)
     .select('-reviews -rating')
-    .exec((err, location) => {
-      if (!location) {
+    .exec((err, personals) => {
+      if (!personals) {
         res
           .json(404)
           .status({
-            "message": "locationid not found"
+            "message": "personalsid not found"
           });
         return;
       } else if (err) {
@@ -177,14 +177,14 @@ const personalsUpdateOne = function (req, res) {
           .json(err);
         return;
       }
-      location.name = req.body.name;
-      location.address = req.body.address;
-      location.facilities = req.body.facilities.split(",");
-      location.coords = [
+      personals.name = req.body.name;
+      personals.address = req.body.address;
+      personals.facilities = req.body.facilities.split(",");
+      personals.coords = [
         parseFloat(req.body.lng),
         parseFloat(req.body.lat)
       ];
-      location.openingTimes = [{
+      personals.openingTimes = [{
         days: req.body.days1,
         opening: req.body.opening1,
         closing: req.body.closing1,
@@ -195,7 +195,7 @@ const personalsUpdateOne = function (req, res) {
         closing: req.body.closing2,
         closed: req.body.closed2,
       }];
-      location.save((err, location) => {
+      personals.save((err, personals) => {
         if (err) {
           res
             .status(404)
@@ -203,7 +203,7 @@ const personalsUpdateOne = function (req, res) {
         } else {
           res
             .status(200)
-            .json(location);
+            .json(personals);
         }
       });
     }
@@ -211,11 +211,11 @@ const personalsUpdateOne = function (req, res) {
 };
 
 const personalsDeleteOne = function (req, res) {
-  const locationid = req.params.locationid;
-  if (locationid) {
+  const personalsid = req.params.personalsid;
+  if (personalsid) {
     personals
-      .findByIdAndRemove(locationid) 
-      .exec((err, location) => {
+      .findByIdAndRemove(personalsid) 
+      .exec((err, personals) => {
           if (err) {
             res
               .status(404)
@@ -231,7 +231,7 @@ const personalsDeleteOne = function (req, res) {
     res
       .status(404)
       .json({
-        "message": "No locationid"
+        "message": "No personalsid"
       });
   }
 };
