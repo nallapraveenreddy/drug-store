@@ -1,13 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const personals = require('../controllers/personals');
-// const ctrlReviews = require('../controllers/reviews');
 const ayurvedics = require('../controllers/ayurvedics');
 const foods = require('../controllers/foods');
 const accesories = require('../controllers/accesories');
 
-// locations
-// --------------ferts route-------------
+// --------------personals route-------------
 router
   .route('/personals')
   .post(personals.personalsCreate)
@@ -19,6 +17,7 @@ router
   .put(personals.personalsUpdateOne)
   .delete(personals.personalsDeleteOne);
   module.exports = router;
+
 // --------------ayurvedics route-------------
   router
   .route('/ayurvedics')
@@ -30,7 +29,8 @@ router
   .get(ayurvedics.ayurvedicsReadOne)
   .put(ayurvedics.ayurvedicsUpdateOne)
   .delete(ayurvedics.ayurvedicsUpdateOne);
-//   // --------------pests route-------------
+  
+// --------------foods route-------------
   router
   .route('/foods')
   .post(foods.foodsCreate)
@@ -41,7 +41,8 @@ router
   .get(foods.foodsReadOne)
   .put(foods.foodsUpdateOne)
   .delete(foods.foodsDeleteOne);
-// --------------accesories rout-------------
+
+// --------------accesories route-------------
   router
   .route('/accesories')
   .post(accesories.accesoriesCreate)
@@ -52,16 +53,3 @@ router
   .get(accesories.accesoriesReadOne)
   .put(accesories.accesoriesUpdateOne)
   .delete(accesories.accesoriesDeleteOne);
-
-  
-//   module.exports = router;
-//   // reviews
-//   // router
-//   //   .route('/locations/:locationid/reviews')
-//   //   .post(ctrlReviews.reviewsCreate);
-  
-//   // router
-//   //   .route('/locations/:locationid/reviews/:reviewid')
-//   //   .get(ctrlReviews.reviewsReadOne)
-//   //   .put(ctrlReviews.reviewsUpdateOne)
-//   //   .delete(ctrlReviews.reviewsDeleteOne);
