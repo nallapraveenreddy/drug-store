@@ -17,7 +17,7 @@ html
         font-size: 20px;
       }
       body{
-        background-image: url('https://www.teahub.io/photos/full/309-3091004_medical-wallpaper-hd-medical.jpg');
+        background-image: url('https://img.freepik.com/free-vector/white-background-with-blue-tech-hexagon_1017-19366.jpg?w=2000');
         background-position: center;
         background-height: 100px;
         background-repeat: no-repeat;
@@ -44,9 +44,7 @@ html
         background-color: orange;
         padding:15px;
       }
-      .heading{
-        margin: 20px;
-      }
+      
       h3{
         margin: 30px;
       }
@@ -64,26 +62,20 @@ html
       .foot{
         color: black;
       }
-      
   body 
     section.navbarsec
       p.title 
-        a.home(href = '/') #{title}
+        a.home(href = '/') #{pageTitle}
       div.navbar
         a(href='/personals') Personal Care
         a(href='/ayurvedics') Ayurvedics
         a(href='/foods') Foods and Drinks
         a(href='/accesories') Accesories and wearables
-    h1 Welcome to #{title}
-    h3 Here you can Buy Medical Products with discounts upto 50%
-    div.heading
-        h2 Medical Practioners:
-        h3 Dr.Praveen 
-          strike MBBS-FRCS, London
-        h3 Dr.Vinay 
-          strike MBBS-FRCS, London
-        h3 Dr.Shivani 
-          strike MBBS-FRCS, London
-    footer Copyright © 2023 RNP Drug Store
+    h1 #{pageHeader.title}
+    h3 #{info.eng} 
+    h3 #{info.hin} 
+    h3 #{info.chi} 
+    
+    footer Copyright © 2023 RNP Drug Store 
       a.foot(href = 'https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsmHbFRVpxcNKkwxMsCQmwNkwBcJrGkTmRslBHdHnDHCBjTFTMjNTscMZzTtKCtzCkxFQwMl') Contact: +15856380143 
       a.foot(href = '/about') About
