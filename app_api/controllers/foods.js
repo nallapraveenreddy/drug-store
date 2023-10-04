@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const foods = mongoose.model('foods');
 
-
-
 const foodsCreate = function (req, res) {
   foods.create({
     name: req.body.name,
@@ -50,64 +48,6 @@ const foodReadAll = async (req, res) =>{
   }
   };
     
-  
-  // const moviesList = async (req, res) => {
-  //   try {
-  //     const results = await Movies.find();
-      
-  //     const movies = results.map(result => ({
-  //       _id: result._id,
-  //       title: result.title,
-  //       posterImageUrl: result.posterImageUrl,
-  //       movieDescription: result.movieDescription,
-  //       releaseDate: result.releaseDate,
-  //       cast:{
-  //         title:result.title,
-  //         heroName:result.heroName,
-  //         heroImageUrl:result.heroImageUrl,
-  //         heroinname:result.heroinname,
-  //         heroinImageUrl:result.heroinImageUrl,
-  //         director:result.director,
-  //         directorImageUrl:result.directorImageUrl,
-  //       },
-  //       reveiws:{
-  //         title:result.title,
-  //         rating:result.rating,
-  //         reviewText:result.reviewText,
-  //         createdOn:result.createdOn,
-  //       }
-  //     }));
-  //     res.status(200).json(movies);
-  //   } catch (err) {
-  //     res.status(500).json({ error: 'An error occurred while fetching movies.' });
-  //   }
-  // };
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const foodsReadOne = function (req, res) {
   if (req.params && req.params.foodsid) {
     foods
@@ -229,5 +169,5 @@ module.exports = {
   foodsReadOne,
   foodsUpdateOne,
   foodsDeleteOne,
-  foodReadAll,
+  foodReadAll
 };
