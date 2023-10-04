@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const ayurvedics = mongoose.model('ayurvedics');
 
-
-
 const ayurvedicsCreate = function (req, res) {
   ayurvedics.create({
     name: req.body.name,
@@ -48,66 +46,6 @@ const ayurvedicReadAll = async (req, res) =>{
     res.status(500).json({ error: 'An error occurred while fetching movies.' });
   }
   };
-  
-  
-  // const moviesList = async (req, res) => {
-  //   try {
-  //     const results = await Movies.find();
-      
-  //     const movies = results.map(result => ({
-  //       _id: result._id,
-  //       title: result.title,
-  //       posterImageUrl: result.posterImageUrl,
-  //       movieDescription: result.movieDescription,
-  //       releaseDate: result.releaseDate,
-  //       cast:{
-  //         title:result.title,
-  //         heroName:result.heroName,
-  //         heroImageUrl:result.heroImageUrl,
-  //         heroinname:result.heroinname,
-  //         heroinImageUrl:result.heroinImageUrl,
-  //         director:result.director,
-  //         directorImageUrl:result.directorImageUrl,
-  //       },
-  //       reveiws:{
-  //         title:result.title,
-  //         rating:result.rating,
-  //         reviewText:result.reviewText,
-  //         createdOn:result.createdOn,
-  //       }
-  //     }));
-  //     res.status(200).json(movies);
-  //   } catch (err) {
-  //     res.status(500).json({ error: 'An error occurred while fetching movies.' });
-  //   }
-  // };
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const ayurvedicsReadOne = function (req, res) {
   if (req.params && req.params.ayurvedicsid) {
@@ -230,5 +168,5 @@ module.exports = {
   ayurvedicsReadOne,
   ayurvedicsUpdateOne,
   ayurvedicsDeleteOne,
-  ayurvedicReadAll,
+  ayurvedicReadAll
 };
