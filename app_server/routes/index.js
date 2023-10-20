@@ -8,6 +8,7 @@ router.get('/personals',ctrlMedicines.personals);
 router.get('/ayurvedics',ctrlMedicines.ayurvedics);
 router.get('/foods',ctrlMedicines.foods);
 router.get('/accesories',ctrlMedicines.accesories);
-
+router.get('/orders',ctrlMedicines.orders);
+router.get('/success',ctrlMedicines.success);
 router.get('/about',ctrlOthers.about);
 module.exports = router;

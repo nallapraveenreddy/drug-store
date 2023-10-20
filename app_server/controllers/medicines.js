@@ -4,9 +4,17 @@ const apiOptions = {
 };
 const homelist = (req, res) => {
     res.render('index',{"title":'RNP Drug Store'});
-
 };
 
+const orders = (req, res) => {
+  res.render('orders',{"title":'Order Page'});
+};
+
+const success = (req, res) => {
+  res.render('success',{"title":'Success',
+message:'Your order has been placed successfully!'});
+
+};
 // -------------------------------personals page--------------------------
 
 const renderpersonals = (req, res, personalsdata) => {
@@ -125,6 +133,8 @@ await request(
 };
 module.exports = {
     homelist,
+    orders,
+    success,
     personals,
     ayurvedics,
     foods,

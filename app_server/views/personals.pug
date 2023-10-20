@@ -77,14 +77,15 @@ html
         a.home(href = '/') RNP Drug Store
       div.navbar
         a(href='/personals' autofocus) Personal Care
-        a(href='/ayurvedics') Ayurvedics
-        a(href='/foods') Foods and Drinks
+        a(href='/ayurvedics') Ayurvedic
+        a(href='/foods') Food and Drinks
         a(href='/accesories') Accesories and wearables
     h1 Personal Care
     section.flexdiv
           div.imgcontainer
               div.imgcontainerchild
-                  img(src=personalsdata[0].image)
+                  a(href='/orders')
+                    img(src=personalsdata[0].image)
                   h2 #{personalsdata[0].name}
                   p #{personalsdata[0].description}                
                   br
@@ -118,5 +119,5 @@ html
     //-               br
     //-               span MRP :#{personalsdata[3].price} ₹
     footer Copyright © 2023 RNP Drug Store 
-      a.foot(href = 'https://mail.google.com/mail/u/0/#inbox?compose=DmwnWsmHbFRVpxcNKkwxMsCQmwNkwBcJrGkTmRslBHdHnDHCBjTFTMjNTscMZzTtKCtzCkxFQwMl') Contact: rnpdrugstore@gmail.com 
+      a.foot(href = 'https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRnZnNVlPRSWjhpNRXBgtfRbMTxtkPbqdxpmtKQVhLrjlCddbgmRQVrHszMkBPwkLxXZGQG') Contact: rnpdrugstore@gmail.com 
       a.foot(href = '/about') About

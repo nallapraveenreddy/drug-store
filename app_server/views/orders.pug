@@ -1,0 +1,81 @@
+doctype html
+html(lang="en")
+  head
+    style.
+      body{
+        text-align:center;
+        background-image:url("https://th.bing.com/th/id/R.47a54046a8a0bf77b047d4189313297b?rik=nS6lOk06Bx9NEA&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f8%2f9%2f2%2f1520340-amazing-medical-wallpaper-backgrounds-1920x1200.jpg&ehk=YlJxKN9%2fiU8UGAXA1itG5a4Nd%2fOJedKuXi7BNNMeXMg%3d&risl=&pid=ImgRaw&r=0");
+        background-repeat:no-repeat;
+        background-size:100%;
+      }
+      div{
+        margin-top:40px;
+        opacity:0.9;
+        background-color:lightgreen;
+        margin-left:30%;
+        margin-right:30%;
+        padding:20px;
+        border:3px solid black;
+        border-radius:20px;
+      }
+      .sub{
+        background-color:lightblue;
+      }
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title RNP Drug Store Order Page
+  body
+    div
+      h1 RNP Drug Store Order Page
+      form(action='/success')
+        label(for="name") Name: 
+        input(type="text", id="name", name="name", required)
+        br
+        br
+        label(for="email") Email: 
+        input(type="email", id="email", name="email", required)
+        br
+        br
+        label(for="phone") Phone Number: 
+        input(type="tel", id="phone", name="phone", required)
+        br
+        br
+        label(for="address1") Address Line 1: 
+        input(type="text", id="address1", name="address1", required)
+        br
+        br
+        label(for="address2") Address Line 2: 
+        input(type="text", id="address2", name="address2")
+        br
+        br
+        label(for="city") City: 
+        input(type="text", id="city", name="city", required)
+        br
+        br
+        label(for="state") State: 
+        input(type="text", id="state", name="state", required)
+        br
+        br
+        label(for="postal") Postal Code: 
+        input(type="text", id="postal", name="postal", required)
+        br
+        br
+        label(for="country") Country: 
+        input(type="text", id="country", name="country", required)
+        br
+        br
+        label(for="medicine1") Medicine Name: 
+        input(type="text", id="medicine1", name="medicine1", required)
+        br
+        br
+        label(for="dosage1") Dosage: 
+        input(type="text", id="dosage1", name="dosage1", required)
+        br
+        br
+        label(for="quantity1") Quantity: 
+        input(type="number", id="quantity1", name="quantity1", required)
+        br
+        br
+        
+      
+        input.sub(type="submit", value="Submit Order",onClick='/success')
